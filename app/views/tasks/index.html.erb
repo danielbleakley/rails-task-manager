@@ -1,0 +1,19 @@
+<h1>Here are your Tasks!!</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+       <p>
+         <%= link_to task.name, task_path(task) %> - <%= task.description %>: <%#= "*" * restaurant.stars %>
+         <%= link_to 'Edit', edit_task_path(task) %>
+         <%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'You sure bruh?'} %>
+       </p>
+    </li>
+
+
+  <% end %>
+  <%= link_to 'Add new Task', new_task_path %>
+</ul>
+
+
+
